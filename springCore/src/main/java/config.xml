@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean name="emp"
+		class="com.zq.grpId.pkg.spring.springCore.Employee">
+		<property name="id" value="15" />
+		<property name="name">
+			<value>Zeba</value>
+		</property>
+
+	</bean>
+
+	<bean name="emp1"
+		class="com.zq.grpId.pkg.spring.springCore.Employee" p:id="20"
+		p:name="Zeba1" />
+
+
+	<bean name="hospital1"
+		class="com.zq.grpId.pkg.spring.springCore.list.Hospital">
+		<property name="name" value="Qureshi Hospital"></property>
+		<property name="departments">
+
+			<list>
+				<value>dept1</value>
+				<value>dept2</value>
+				<value>dept3</value>
+				<value>dept4</value>
+			</list>
+
+		</property>
+
+
+	</bean>
+
+
+</beans> 	

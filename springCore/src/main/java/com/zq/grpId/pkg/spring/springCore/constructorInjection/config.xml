@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="address1"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Address">
+		<property name="hno" value="700" />
+		<property name="street" value="chandini chowk" />
+		<property name="city" value="delhi" />
+	</bean>
+
+
+	<bean name="employee1"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Employee">
+		<constructor-arg value="123" />
+		<constructor-arg ref="address1" />
+
+	</bean>
+
+	<bean name="address2"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Address">
+		<property name="hno" value="900" />
+		<property name="street" value="chandini 2 chowk" />
+		<property name="city" value="delhi2" />
+	</bean>
+
+	<bean name="employee2"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Employee">
+		<constructor-arg>
+			<value>456</value>
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="address2" />
+		</constructor-arg>
+
+	</bean>
+
+
+	<bean name="address3"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Address">
+		<property name="hno" value="200" />
+		<property name="street" value="chandini 3 chowk" />
+		<property name="city" value="delhi3" />
+	</bean>
+
+	<bean name="employee3"
+		class="com.zq.grpId.pkg.spring.springCore.constructorInjection.Employee"
+		c:id="897" c:address-ref="address3" />
+
+
+
+
+
+</beans> 	
